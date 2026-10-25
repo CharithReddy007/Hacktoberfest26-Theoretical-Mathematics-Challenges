@@ -49,11 +49,22 @@ The four outer bridges are P–Q, Q–R, R–S, and S–P. Each outer island als
 
 ### My guess
 
-Write your own initial guess here before attempting the walk.
+I guessed it would be **impossible**. Königsberg was impossible, and my map has even more bridges (11), so I thought it would only be harder.
 
 ### My attempts
 
-Record at least three walks you tried and note where each one got stuck, if it did. Keep the two P–C bridges, two R–C bridges, and two S–C bridges distinct in your notes because each must be crossed separately.
+I numbered the double bridges as P–C₁/P–C₂, R–C₁/R–C₂, S–C₁/S–C₂.
+
+**Attempt 1 (start at P):** P → Q → R → S → P → C (P–C₁) → P (P–C₂).
+Stuck at P after 6 bridges: all 4 of P's bridges are used, but Q–C, R–C₁, R–C₂, S–C₁, S–C₂ are still left.
+
+**Attempt 2 (start at C):** C → Q → P → S → R → Q.
+Stuck at Q after 5 bridges: Q only has 3 bridges and all are used, but all six double bridges to C are left.
+
+**Attempt 3 (start at R):** R → C (R–C₁) → S (S–C₁) → C (S–C₂) → P (P–C₁) → C (P–C₂) → R (R–C₂) → S → P → Q → C.
+Stuck at C after 10 of 11 bridges: only Q–R is left, and I'm nowhere near it.
+
+All three failures ended at a "wrong" island, which made me try counting instead of guessing.
 
 ### Bridges touching each island
 
@@ -83,11 +94,11 @@ Every time a walk enters an island and then leaves it, it uses bridges in pairs.
 
 ## What surprised me
 
-Write what you found surprising while trying the walks and checking the bridge counts.
+I was wrong: adding bridges didn't make it harder. The extra bridges turned P, R and S from odd to even, which is what made the walk possible. Also, attempt 3 got within one bridge of finishing just by starting on the wrong island. The start point matters more than the route.
 
 ## So I think what's happening is
 
-Write your own summary of the pattern you observed.
+Every island in the middle of a walk needs bridges in pairs: one in, one out. Only the start and end islands can have a leftover odd bridge. So the walk is possible only when 0 or 2 islands have an odd count, and with 2 you must start at one of them. Mine has exactly two (Q = 3, C = 7), so I start at C and end at Q.
 
 ## The pattern being covered here is...
 
@@ -95,4 +106,4 @@ This problem illustrates Euler trails in graph theory: the number of bridges tou
 
 ## Did I use AI? For what?
 
-If you used AI, describe honestly how you used it. For example: “I used AI to check my understanding of the Euler-trail rule and verify a candidate walk; I reviewed the reasoning and checked the bridge counts myself.”
+Yes. I used AI tools (Claude and another assistant) to help draft this solution: the Enigma number table, the map setup, the counting argument, the attempts and the final walk. I checked the bridge counts and traced the final walk myself to confirm it uses all 11 bridges exactly once.
